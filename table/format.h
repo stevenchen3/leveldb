@@ -39,6 +39,8 @@ class BlockHandle {
   Status DecodeFrom(Slice* input);
 
  private:
+  // Encoded as varint when serialized to disk which occupies 10 bytes
+  // See details about varint https://developers.google.com/protocol-buffers/docs/encoding#varints
   uint64_t offset_;
   uint64_t size_;
 };
